@@ -35,3 +35,18 @@ while (is_sentence(user_sentence) == False):
     print("This does not meet the criteria for a sentence.")
     user_input = input("Enter a sentence: ")
     
+words = []
+frequencies = []
+
+for x in user_sentence.split():
+    if x.strip('.,?!&').lower() in words:
+        y = words.index(x.strip('.,?!&').lower())
+        frequencies[y] += 1
+    else:
+        words.append(x.strip('.,?!&').lower())
+        frequencies.append(1)
+
+
+for x in words:
+    y = words.index(x.strip('.,?!&').lower())
+    print(words[y], "-", frequencies[y])
