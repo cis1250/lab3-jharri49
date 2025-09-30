@@ -10,14 +10,15 @@ first = 0
 second = 1
 third = 0
 
-print("Input number of terms\n")
-terms = input()
-while terms >= 0:
-  print("Please enter a positive integer.\n")
-  terms = input()
+print("Input number of terms")
+terms = int(input())
+while terms <= 0:
+  print("Please enter a positive integer.")
+  terms = int(input())
+print("Your Fibonacci Sequence:")
 for x in range(terms):
   third = first + second
-  print(third + " ")
+  print(third)
   first = second
   second = third
   third = 0
